@@ -5,4 +5,4 @@ Welcome to my personal portfolio repository! 🚀 This project showcases my skil
 Hello! I'm a passionate web developer currently training with Orange in Full Stack MERN development. I love creating innovative and efficient web solutions that solve real-world problems.
 
 🛠️ Technologies & Tools
-Frontend: React.js, HTML5, CSS3
+Frontend: HTML5, CSS3
