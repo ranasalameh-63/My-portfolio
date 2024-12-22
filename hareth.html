@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!-- تحديد الترميز المستخدم في الصفحة -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ضبط إعدادات العرض للصفحة لتناسب شاشات الهواتف الذكية -->
+    <title>Contact Form</title> <!-- عنوان الصفحة الذي يظهر في شريط العنوان -->
+    <style>
+        /* تنسيق الجسم (body) */
+        body {
+            font-family: Arial, sans-serif; /* تحديد الخط المستخدم في الصفحة */
+            margin: 0; /* إزالة الهوامش الافتراضية */
+            padding: 0; /* إزالة الحشوة الافتراضية */
+            display: flex; /* استخدام flexbox لترتيب العناصر */
+            justify-content: center; /* توسيط المحتوى أفقياً */
+            align-items: center; /* توسيط المحتوى عمودياً */
+            height: 100vh; /* جعل ارتفاع الصفحة يعادل ارتفاع نافذة المتصفح */
+            background: #f0f0f0; /* تعيين لون الخلفية للصفحة */
+        }
+
+        /* تنسيق الحاوية التي تحتوي على النموذج */
+        .contact-container {
+            width: 100%; /* عرض الحاوية كامل */
+            max-width: 600px; /* الحد الأقصى لعرض الحاوية */
+            background: rgba(255, 255, 255, 0.9); /* تعيين الخلفية بلون أبيض مع الشفافية */
+            padding: 30px; /* إضافة حشوة داخل الحاوية */
+            border-radius: 10px; /* إضافة حواف دائرية للحاوية */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* إضافة تأثير الظل على الحاوية */
+            backdrop-filter: blur(10px); /* إضافة تأثير تشويش للخلفية خلف الحاوية */
+            display: flex; /* استخدام flexbox داخل الحاوية */
+            flex-direction: column; /* ترتيب العناصر داخل الحاوية بشكل عمودي */
+            gap: 20px; /* إضافة مسافة بين العناصر داخل الحاوية */
+        }
+
+        /* تنسيق العنوان داخل النموذج */
+        .contact-form h3 {
+            text-align: center; /* توسيط النص */
+            margin-bottom: 20px; /* إضافة مسافة أسفل العنوان */
+            color: #ff7f50; /* تعيين اللون البرتقالي للعناصر */
+        }
+
+        /* تنسيق الحقل (form-group) */
+        .form-group {
+            display: flex; /* استخدام flexbox داخل الحقل */
+            flex-direction: column; /* ترتيب العناصر داخل الحقل بشكل عمودي */
+            gap: 10px; /* إضافة مسافة بين العناصر داخل الحقل */
+            margin-right: 10px; /* إضافة مسافة على اليمين للحقل */
+        }
+
+        .form-group label {
+            font-weight: bold; /* جعل النص بالخط العريض */
+            margin-bottom: 5px; /* إضافة مسافة أسفل التسمية */
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%; /* جعل الحقل يأخذ عرض 100% من المساحة المتاحة */
+            padding: 12px; /* إضافة حشوة داخل الحقل */
+            border: 1px solid #ccc; /* تعيين حد رمادي اللون للحقل */
+            border-radius: 5px; /* إضافة حواف دائرية للحقل */
+            font-size: 1rem; /* تعيين حجم الخط داخل الحقل */
+            color: #333; /* تعيين لون النص داخل الحقل */
+            background: rgba(223, 159, 159, 0.8); /* تعيين خلفية فاتحة مع الشفافية */
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none; /* إزالة الإطار حول الحقل عند التركيز */
+            box-shadow: 0 0 10px #ff7f50; /* إضافة تأثير ظل حول الحقل عند التركيز */
+        }
+
+        /* تنسيق صف الحقول */
+        .form-row {
+            display: flex; /* استخدام flexbox لترتيب الحقول داخل الصف */
+            gap: 20px; /* إضافة مسافة بين الحقول */
+            flex-wrap: wrap; /* السماح للحقول بالتفاف إلى السطر التالي عند الحاجة */
+            justify-content: space-between; /* توزيع الحقول بشكل متساوٍ */
+        }
+
+        .form-row .form-group {
+            flex: 1 1 45%; /* جعل الحقول تأخذ 45% من العرض المتاح في كل سطر */
+        }
+
+        .form-row .form-group input {
+            width: 100%; /* جعل الحقل يأخذ عرض 100% داخل الـ form-group */
+        }
+
+        /* تنسيق زر الإرسال */
+        .submit-btn {
+            background: #ff7f50; /* تعيين خلفية الزر باللون البرتقالي */
+            color: #fff; /* تعيين لون النص داخل الزر إلى الأبيض */
+            padding: 12px 25px; /* إضافة حشوة داخل الزر */
+            border: none; /* إزالة الحدود حول الزر */
+            border-radius: 50px; /* جعل الزر دائري */
+            font-size: 1rem; /* تعيين حجم الخط داخل الزر */
+            cursor: pointer; /* تغيير المؤشر إلى يد عند التمرير فوق الزر */
+            text-transform: uppercase; /* جعل النص داخل الزر بحروف كبيرة */
+            letter-spacing: 2px; /* زيادة المسافة بين الأحرف داخل الزر */
+            transition: background 0.3s, transform 0.3s; /* إضافة تأثير انتقال عند التمرير على الزر */
+            margin-top: 20px; /* إضافة مسافة في الأعلى */
+            width: 100%; /* جعل الزر يأخذ عرض 100% من المساحة المتاحة */
+        }
+
+        /* تأثير التمرير على الزر */
+        .submit-btn:hover {
+            transform: translateY(-5px); /* رفع الزر قليلاً عند التمرير فوقه */
+            background: #e07b40; /* تغيير لون خلفية الزر عند التمرير */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="contact-container">
+        <!-- حاوية النموذج -->
+        <div class="contact-form">
+            <h3>Get in Touch</h3> <!-- عنوان النموذج -->
+            <form action="submit-form.php" method="POST"> <!-- نموذج الإرسال مع تحديد الـ action و method -->
+                <div class="form-row">
+                    <!-- الحقول الأولى والثانية (الاسم الأول والأخير) -->
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" required> <!-- حقل الاسم الأول -->
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" required> <!-- حقل الاسم الأخير -->
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <!-- الحقول الثالثة والرابعة (البريد الإلكتروني ورقم الهاتف) -->
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required> <!-- حقل البريد الإلكتروني -->
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Your Phone</label>
+                        <input type="tel" id="phone" name="phone" required> <!-- حقل رقم الهاتف -->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <!-- القائمة المنسدلة (الدعم، الاستفسار، إلخ) -->
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required> <!-- حقل الاختيار -->
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Support</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <!-- حقل الرسالة -->
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea> <!-- حقل نص الرسالة -->
+                </div>
+
+                <!-- زر الإرسال -->
+                <button type="submit" class="submit-btn">Send Message</button> <!-- زر إرسال النموذج -->
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

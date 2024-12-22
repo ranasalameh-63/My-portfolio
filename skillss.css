@@ -1,0 +1,126 @@
+body{
+    background-image:url(back3.png) ;
+    background-size: cover;                 
+    background-repeat: no-repeat;       
+    background-attachment: fixed;         
+    background-position: center; 
+    font-family: 'Inknut Antiqua', serif;
+}
+.navbar{
+    box-shadow: 1px 1px 5px rgb(203, 135, 146);
+}
+.navbar .nav-link {
+    color: black !important;
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 18px;
+}
+
+/* /اي تعديلات على اسم رنا سلامة/ */
+.navbar .navbar-brand {
+    color: black;
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 25px;
+    margin-right: auto;
+    margin-left: 30px;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 30px; 
+}
+
+.nav-item:hover {
+    background-color: #E9C4CE; 
+}
+.Icon{
+background-color: black;
+}
+
+.nav-item {
+    padding: 10px 15px;
+}
+
+/* إضافة بعض الحشو بين العناصر */
+.nav-item {
+    padding: 10px 15px;
+}
+h3{
+    font-family: 'Inknut Antiqua', serif;
+    color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);  /* ظل خفيف */
+
+}
+.container{
+    margin-top: 130px;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+table {
+    border-collapse: separate;  /* فصل الخلايا عن بعضها */
+    border-spacing: 50px;       /* تباعد بين الخلايا */
+    width: 100%;                /* جعل الجدول يأخذ عرض الصفحة */
+    text-align: center;         /* توسيط النصوص داخل الخلايا */
+}
+
+td {
+    padding: 20px;              /* مسافة داخلية لكل خلية */
+    background-color: #f9f9f9;  /* خلفية للخلايا */
+    font-weight: bold;          /* جعل النص عريض */
+    border-radius: 6px;        /* زوايا مستديرة للخلايا */
+    box-shadow: 2px 2px 10px #101010; /* ظل ناعم */
+    transition: transform 0.3s ease; /* تأثير عند تمرير الماوس */
+    
+}
+
+td:hover {
+    transform: scale(1.2);  /* تكبير الخلية عند تمرير الماوس */
+    background-color: hsl(340, 100%, 90%); /* تغيير لون الخلفية عند hover */
+}
+
+@media (min-width: 400px) and (max-width: 1024px) {
+    table {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}
+
+
+.footer {
+    margin-top: 100px;
+    background-color: #000;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+.footer .links a, .footer .social-icons a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+.footer .links a:hover, .footer .social-icons a:hover {
+    color: #FF69B4; /* زهري بارد */
+}
+.social-icons i {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #FF69B4;
+    margin-top: 25px;
+}
+.social-icons :hover{
+    color: white;
+}
+@media (min-width: 400px) and (max-width: 1024px) {
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}

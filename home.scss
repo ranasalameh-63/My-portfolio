@@ -1,0 +1,242 @@
+$maincolor:black;
+
+body{
+    background-image:url(back.png) ;
+    background-size: cover;                 
+    background-repeat: no-repeat;       
+    background-attachment: fixed;         
+    background-position: center; 
+    font-family: 'Inknut Antiqua', serif;
+    display: grid;
+}
+.navbar .nav-link {
+    color: $maincolor !important;
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 18px;
+}
+.navbar{
+    box-shadow: 1px 1px 5px rgb(203, 135, 146);
+}
+/*اي تعديلات على اسم رنا سلامة*/
+.navbar .navbar-brand {
+    color: $maincolor !important;
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 25px;
+    margin-right: auto;
+    margin-left: 30px;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 30px; 
+}
+
+.nav-item:hover {
+    text-decoration:underline #FF69B4; 
+}
+.Icon{
+background-color: $maincolor;
+}
+
+.nav-item {
+    padding: 10px 15px;
+}
+
+/* إضافة بعض الحشو بين العناصر */
+.nav-item {
+    padding: 10px 15px;
+}
+.Hero {
+    font-family: 'Inknut Antiqua', serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2px;
+    padding: 50px;
+    margin-top: 60px;
+    flex-wrap: wrap;  /* Allow content to wrap on smaller screens */
+}
+
+.Hero .text {
+    width: 514px;
+    max-width: 100%;  /* Ensure text container doesn't exceed 100% width */
+}
+
+.text h2:nth-child(2) {
+    margin-top: 15px;
+}
+
+.text p {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    color: $maincolor;
+}
+
+h2 {
+    text-shadow: 3px 3px 5px rgb(203, 135, 146);
+    margin-left: 50px;
+    color: $maincolor;
+}
+
+.Hero img {
+    margin-right: 110px;
+    animation: float 3s linear infinite;
+    max-width: 100%;  /* Make sure the image scales on smaller screens */
+}
+
+/* Float animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(48px);
+    }
+}
+
+.download,
+.downloadd {
+    background-color: $maincolor;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px #FFBBCE;
+    transition: box-shadow 0.3s ease;
+}
+
+.download:hover,
+.downloadd:hover {
+    transform: scale(1.1);
+}
+
+.download {
+    margin-left: 50px;
+}
+
+.downloadd {
+    margin-left: 700px;
+}
+
+/* About section */
+.about h2 {
+    margin-left: 95px;
+    margin-top: 50px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 50px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto; /* Center the table */
+}
+
+td {
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-weight: bold;
+    border-radius: 6px;
+    box-shadow: 2px 2px 10px $maincolor;
+    transition: transform 0.3s ease;
+}
+
+td:hover {
+    transform: scale(1.1);
+    background-color: hsl(340, 100%, 90%);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .Hero {
+        flex-direction: column; /* Stack the hero section on smaller screens */
+        align-items: flex-start;
+    }
+
+    .Hero .text {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .Hero img {
+        margin-right: 0;
+        margin-bottom: 30px;
+        max-width: 100%;  /* Ensure image fits in smaller viewports */
+    }
+
+    .download,
+    .downloadd {
+        margin-left: 0;
+        width: 100%; /* Make buttons full width on small screens */
+        margin-bottom: 15px;
+    }
+
+    .about h2 {
+        margin-left: 0; /* Remove margin for smaller screens */
+    }
+
+    table {
+        display: block;
+        width: 100%;  /* Make the table full-width */
+        overflow-x: auto;  /* Allow horizontal scroll on small screens */
+    }
+
+    td {
+        padding: 10px;
+        font-size: 14px;  /* Smaller font for better readability on small screens */
+    }
+}
+
+@media (max-width: 400px) {
+    h2 {
+        font-size: 18px; /* Reduce font size for mobile */
+        margin-left: 20px;  /* Adjust margin for better spacing */
+    }
+
+    .text p {
+        margin-left: 20px;
+    }
+
+    .download,
+    .downloadd {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+
+.footer {
+    margin-top: 100px;
+    background-color: $maincolor;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+.footer .links a, .footer .social-icons a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+.footer .links a:hover, .footer .social-icons a:hover {
+    color: #FF69B4; /* زهري بارد */
+}
+.social-icons i {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #FF69B4;
+    margin-top: 25px;
+}
+.social-icons :hover{
+    color: white;
+}
+@media (min-width: 400px) and (max-width: 1024px) {
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}
