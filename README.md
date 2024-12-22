@@ -7,4 +7,4 @@ Hello! I'm a passionate web developer currently training with Orange in Full Sta
 🛠️ Technologies & Tools
 Frontend: HTML5, CSS3
 
-[Figma Design]([https://www.figma.com/file/example](https://www.figma.com/design/wFq9j9Dm3bgmN06Nqe2Wll/Portfolio?node-id=0-1&p=f&t=zXMqyn6LidWsKH5S-0))
+[Figma design](https://www.figma.com/design/wFq9j9Dm3bgmN06Nqe2Wll/Portfolio?node-id=0-1&t=jKhqfrFVJbLJ5VB9-1))
